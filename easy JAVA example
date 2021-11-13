@@ -1,0 +1,56 @@
+
+        // tema vakfı sorusu
+
+        System.out.println(".Please enter the total expenditure you have made so far..");
+
+        Scanner remove = new Scanner(System.in);
+        int money = remove.nextInt();
+        System.out.println("your money :" + money);
+
+        if (money < 250) {
+            int a = money / 50;
+            int giveMoney = a * 10;
+            System.out.println("Donation to TEMA :" + giveMoney);
+            System.out.println("Do you want to donate? (yes = 1 / no=0)");
+            Scanner reply = new Scanner(System.in);
+            int answer = reply.nextInt();
+            if (answer == 1) {
+                System.out.println("thank you Donation to TEMA " + giveMoney);
+
+            } else {
+                System.out.println("thank you :(");
+            }
+
+        } else if (money >= 250 || money <= 500) {
+            int a = money / 50;
+            int giveMoney = a * 15;
+            System.out.println("Donation to TEMA :" + giveMoney);
+            System.out.println("Do you want to donate? (yes = 1 / no=0)");
+            Scanner reply = new Scanner(System.in);
+            int answer = reply.nextInt();
+            if (answer == 1) {
+                System.out.println("thank you Donation to TEMA " + giveMoney);
+
+            } else {
+                System.out.println("thank you :(");
+            }
+
+        } else if (money > 500) {
+            int a = money / 50;
+            int giveMoney = a * 20;
+            System.out.println("Donation to TEMA :" + giveMoney);
+            System.out.println("Do you want to donate? (yes = 1 / no=0)");
+            Scanner reply = new Scanner(System.in);
+            int answer = reply.nextInt();
+            if (answer == 1) {
+                System.out.println("thank you Donation to TEMA " + giveMoney);
+
+            } else {
+                System.out.println("thank you :(");
+            }
+
+        }
+        System.out.println("good days.....");
+    }
+
+}
