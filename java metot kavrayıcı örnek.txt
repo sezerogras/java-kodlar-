@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class ElektrikSirketi {
+
+    public static void main(String[] args) {
+        System.out.println("1- yaz kullanýmý %10 indirim uygulanýr ");
+        System.out.println("2- bahar  kullanýmý %1 indirim uygulanýr ");
+        System.out.println("3- kis kullanýmý %0 indirim uygulanýr ");
+        System.out.println("4- sonbahar kullanýmý %7 indirim uygulanýr ");
+        for (int i = 0; i < 3; i++) {
+            System.out.println("secim giriniz ...(LUTFEN KW CÝNSÝNDEN GÝRÝNÝZ )");
+            Scanner tara = new Scanner(System.in);
+            int secim = tara.nextInt();
+
+            System.out.println("LUTFEN ESKÝ SAYAC DEGERÝNÝ GÝRNÝZ ");
+            int eski = tara.nextInt();
+
+            System.out.println("LUTFEN YENÝ SAYAC DEGEREÝNÝ GÝRÝNÝZ ");
+            int yeni = tara.nextInt();
+
+            musterihesap(secim, eski, yeni);
+
+        }
+        System.out.println(" SISTEM KULLANIM HAKKINIZ SONA ERMÝSTÝR . SAÐLIKLI GUNLER .....");
+
+    }
+
+    public static double musterihesap(int secim, int eski, int yeni) {
+
+        if (secim == 1) {
+
+            System.out.println("seciminiz yaz indirimli faturanýz :");
+            double fatura = (yeni - eski) * 3 * 90 / 100;
+
+            System.out.println("    " + fatura);
+            return  fatura;
+        } else if (secim == 2) {
+
+            System.out.println("seciminiz bahar indirimli faturanýz : ");
+            double fatura2 = (yeni - eski) * 3 * 99 / 100;
+            System.out.println("    " + fatura2);
+            return fatura2;
+        } else if (secim == 3) {
+            System.out.println("seciminiz kis (maalesef ) indirimsiz  faturanýz : ");
+            double fatura3 = (yeni - eski) * 3 * (100 / 100);
+            System.out.println("  " + fatura3);
+            return fatura3;
+
+        } else {
+            System.out.println("seciminiz sonbahar indirimli faturanýz : ");
+            double fatura4 = (yeni - eski) * 3 * 93 / 100;
+            System.out.println("    " + fatura4);
+            return fatura4;
+        }
+
+    }
+
+}
