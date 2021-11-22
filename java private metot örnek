@@ -1,0 +1,125 @@
+public class ogrencisoru {
+
+     String name;
+     private int ogrencino;
+     private double vizenotu;
+     private double projenotu;
+     private double finalnotu;
+
+     public ogrencisoru(String name, int ogrencino, double vizenotu, double projenotu, double finalnotu) {
+          this.name = name;
+          this.ogrencino = ogrencino;
+          this.vizenotu = vizenotu;
+          this.projenotu = projenotu;
+          this.finalnotu = finalnotu;
+
+     }
+
+     public double nothesapla() {
+
+          double genelnot = (finalnotu * 40 / 100) + (vizenotu * 25 / 100) + (projenotu * 35 / 100);
+          System.out.println("hesaplanan total notunuz : " + genelnot);
+          return genelnot;
+     }
+
+     public void harfnotucevir() {
+
+          if (nothesapla() >= 90 && nothesapla() <= 100) {
+
+               System.out.println(ogrencino + " no'lu sayin : " + name + "harf notunuz : AA dır ");
+          } else if (nothesapla() >= 85 && nothesapla() <= 89) {
+
+               System.out.println(ogrencino + " no'lu sayin : " + name + "harf notunuz : BA dır ");
+          } else if (nothesapla() >= 75 && nothesapla() <= 84) {
+
+               System.out.println(ogrencino + " no'lu sayin : " + name + "harf notunuz : BB dir ");
+          } else if (nothesapla() >= 70 && nothesapla() <= 74) {
+
+               System.out.println(ogrencino + " no'lu sayin : " + name + "harf notunuz : CB dir ");
+          } else if (nothesapla() >= 60 && nothesapla() <= 69) {
+
+               System.out.println(ogrencino + " no'lu sayin : " + name + "harf notunuz : CC dir ");
+          } else if (nothesapla() >= 55 && nothesapla() <= 59) {
+
+               System.out.println(ogrencino + " no'lu sayin : " + name + "harf notunuz : DC dir ");
+          } else if (nothesapla() >= 50 && nothesapla() <= 54) {
+
+               System.out.println(ogrencino + " no'lu sayin : " + name + "harf notunuz : DD dir ");
+          } else if (nothesapla() >= 0 && nothesapla() <= 49) {
+
+               System.out.println(ogrencino + " no'lu sayin : " + name + "harf notunuz : FF dir ");
+          }
+
+     }
+
+     public String getName() {
+          return name;
+           }
+
+     public void setName(String name) {
+          this.name = name;
+     }
+
+     public int getOgrencino() {
+          return ogrencino;
+     }
+
+     public void setOgrencino(int ogrencino) {
+          this.ogrencino = ogrencino;
+     }
+
+     public double getVizenotu() {
+          return vizenotu;
+     }
+
+     public void setVizenotu(double vizenotu) {
+          this.vizenotu = vizenotu;
+     }
+
+     public double getProjenotu() {
+          return projenotu;
+     }
+
+     public void setProjenotu(double projenotu) {
+          this.projenotu = projenotu;
+     }
+
+     public double getFinalnotu() {
+          return finalnotu;
+     }
+
+     public void setFinalnotu(double finalnotu) {
+          this.finalnotu = finalnotu;
+     }
+                    // buraya kadar ogrenci sınıfı alttatki ise main metodunun sınıfı sınıflar arası geciş.
+}
+import java.util.Scanner;
+
+public class OgrenciTest {
+
+    public static void main(String[] args) {
+
+        int sacmadeger = -1;
+        while (sacmadeger == -1) {
+            Scanner tara = new Scanner(System.in);
+            System.out.println("ogrenci ismi giriniz ...");
+            String isim = tara.nextLine();
+            System.out.println("ogrenci numarasi giriniz ...");
+            int girdi = tara.nextInt();
+            System.out.println("ogrenci vize notu giriniz ...");
+            int girdi1 = tara.nextInt();
+            System.out.println("ogrenci proje notu giriniz...");
+            int girdi2 = tara.nextInt();
+            System.out.println("ogrenci fiinal notu giriniz...");
+            int girdi3 = tara.nextInt();
+
+            ogrencisoru ogrencican = new ogrencisoru("isim ", girdi, girdi1, girdi2, girdi3);
+
+            ogrencican.harfnotucevir();
+            ogrencican.nothesapla();
+
+        }
+
+    }
+
+}
